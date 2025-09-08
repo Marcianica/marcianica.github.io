@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marcianica</title>
+<style>
+  :root {
+    --bg:#0e0f12;
+    --card:#151821;
+    --text:#e7e9ee;
+    --muted:#aab1bf;
+    --brand:#8ed7c6;
+    --brand2:#c0a6ff;
+  }
+  *{box-sizing:border-box}
+  html,body {
+    margin:0;
+    background:linear-gradient(180deg,#0c0d10,#12141a);
+    color:var(--text);
+    font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Inter;
+  }
+  header {
+    position:sticky;top:0;
+    backdrop-filter:saturate(120%) blur(8px);
+    background:rgba(10,12,16,.5);
+    border-bottom:1px solid rgba(255,255,255,.06);
+  }
+  .container {width:min(1100px,92vw);margin:auto;padding:0 1rem}
+  .nav {display:flex;justify-content:space-between;align-items:center;padding:.75rem 0}
+  .brand {display:flex;gap:.6rem;align-items:center;font-weight:800}
+  main {padding:11vh 0 8vh;text-align:center}
+  h1 {
+    font-size:clamp(2rem,3.8vw + .5rem,3.2rem);
+    line-height:1.1;
+    margin:.5rem 0 .75rem
+  }
+  p {color:var(--muted)}
+  .btn {
+    display:inline-block;
+    margin:.4rem;
+    background:linear-gradient(90deg,var(--brand),var(--brand2));
+    color:#0a0d12;
+    padding:.8rem 1.1rem;
+    border-radius:999px;
+    font-weight:700;
+    text-decoration:none;
+    box-shadow:0 6px 24px rgba(142,215,198,.35)
+  }
+  footer {
+    border-top:1px solid rgba(255,255,255,.08);
+    padding:1rem 0;
+    color:var(--muted);
+    text-align:center
+  }
+  .logo {
+    width:96px;height:96px;
+    margin:0 auto 12px;display:block;
+    filter:drop-shadow(0 2px 6px rgba(0,0,0,.4))
+  }
+</style>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">Marcianica</div>
+      <nav><a href="#contact" style="color:#aab1bf;text-decoration:none">Contacto</a></nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Inline SVG logo -->
+    <svg class="logo" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" aria-label="Logo">
+      <defs>
+        <linearGradient id="g" x1="0" x2="1">
+          <stop offset="0" stop-color="#8ed7c6"/>
+          <stop offset="1" stop-color="#c0a6ff"/>
+        </linearGradient>
+      </defs>
+      <rect width="96" height="96" rx="20" fill="#0f1217"/>
+      <g transform="translate(12,12)">
+        <path d="M36 6 L60 54 L48 54 L36 30 L24 54 L12 54 Z" fill="url(#g)"/>
+        <circle cx="36" cy="60" r="4" fill="url(#g)"/>
+      </g>
+    </svg>
+
+    <h1>Diseño que perdura.</h1>
+    <p>Este es tu sitio web simple y elegante, listo para personalizar con tu marca.</p>
+    <a class="btn" href="#contact">Escríbeme</a>
+  </main>
+
+  <section id="contact" class="container" style="padding:56px 0;text-align:center">
+    <h2>Contacto</h2>
+    <p>Puedes escribirme a:</p>
+    <p><a href="mailto:tu@email.com" style="color:#e7e9ee">tu@email.com</a></p>
+  </section>
+
+  <footer>
+    <div class="container">© <span id="y"></span> Marcianica</div>
+  </footer>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
